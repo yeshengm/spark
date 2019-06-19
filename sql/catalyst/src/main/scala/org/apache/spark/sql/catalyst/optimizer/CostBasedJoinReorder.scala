@@ -108,7 +108,7 @@ case class OrderedJoin(
     right: LogicalPlan,
     joinType: JoinType,
     condition: Option[Expression]) extends BinaryNode {
-  override def output: Seq[Attribute] = left.output ++ right.output
+  override lazy val output: Seq[Attribute] = left.output ++ right.output
 }
 
 /**

@@ -25,6 +25,6 @@ import org.apache.spark.sql.catalyst.expressions.Attribute
  * eagerly executed.
  */
 trait Command extends LogicalPlan {
-  override def output: Seq[Attribute] = Seq.empty
+  override lazy val output: Seq[Attribute] = Seq.empty
   override def children: Seq[LogicalPlan] = Seq.empty
 }
